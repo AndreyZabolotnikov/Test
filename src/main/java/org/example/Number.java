@@ -2,25 +2,25 @@ package org.example;
 
 import java.util.Scanner;
 
-public class Main {
-    public static final String[] ZERO = {"ноль", "ноля", "нолю", "ноль", "нолем", "ноле"};
-    public static final String[][] ONE = {{"один", "одного", "одному", "один", "одним", "одном"}, {"одна", "одной", "одной", "одну", "одной", "одной"}, {"одно", "одного", "одному", "одно", "одним", "одном"}};
-    public static final String[][] TWO = {{"два", "двух", "двум", "два", "двумя", "двух"}, {"две", "двух", "двум", "две", "двумя", "двух"}, {"два", "двух", "двум", "два", "двумя", "двух"}};
-    public static final String[] ROOT_NUMBER = {"тр", "четыр", "пят", "шест", "сем", "вос", "девят", "десят", "одиннадцат", "двенадцат", "тринадцат",
+public class Number {
+    private static final String[] ZERO = {"ноль", "ноля", "нолю", "ноль", "нолем", "ноле"};
+    private static final String[][] ONE = {{"один", "одного", "одному", "один", "одним", "одном"}, {"одна", "одной", "одной", "одну", "одной", "одной"}, {"одно", "одного", "одному", "одно", "одним", "одном"}};
+    private static final String[][] TWO = {{"два", "двух", "двум", "два", "двумя", "двух"}, {"две", "двух", "двум", "две", "двумя", "двух"}, {"два", "двух", "двум", "два", "двумя", "двух"}};
+    private static final String[] ROOT_NUMBER = {"тр", "четыр", "пят", "шест", "сем", "вос", "девят", "десят", "одиннадцат", "двенадцат", "тринадцат",
             "четырнадцат", "пятнадцат", "шестнадцат", "семнадцат", "восемнадцат", "девятнадцат", "двадцат", "тридцат", "сорок", "девяност", "ст"};
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+
         System.out.print("Введите число от -999 999 999 999 до 999 999 999 999 : ");
         Long num = sc.nextLong();
 
         System.out.print("Введите род числа на кириллице: М, Ж или С : ");
         String sGender = sc.next();
-        sGender = sGender.toUpperCase();
 
         System.out.print("Введите падеж числа на кириллице: И, Р, Д, В, Т или П : ");
         String sCase = sc.next();
-        sCase = sCase.toUpperCase();
 
         System.out.println(sumProp(num, sGender, sCase));
     }
@@ -31,6 +31,9 @@ public class Main {
         int indexGender; // род индекс в массиве
         int indexCase; // падеж индекс в массиве
         String negativ = ""; //Отрицательные числа
+
+        sGender = sGender.toUpperCase(); //Преобразование в нужный регистор;
+        sCase = sCase.toUpperCase(); //Преобразование в нужный регистор;
 
         //Если число отрицательное
         if (nSum < 0) {
@@ -166,7 +169,7 @@ public class Main {
     }
 
     //Метод получения простого числа и окончания для составного
-    public static String number(long number, String sCase) {
+    private static String number(long number, String sCase) {
 
         int num;
 
@@ -235,7 +238,7 @@ public class Main {
     }
 
     //Получение окончания взависимости от падежа
-    public static String endingNumber(String sCase, String iCase, String rCase, String dCase, String vCase, String tCase, String pCase) {
+    private static String endingNumber(String sCase, String iCase, String rCase, String dCase, String vCase, String tCase, String pCase) {
 
         String StrNum = "";
 
