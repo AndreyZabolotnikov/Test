@@ -1,29 +1,11 @@
 package org.example;
 
-import java.util.Scanner;
-
 public class Number {
     private static final String[] ZERO = {"ноль", "ноля", "нолю", "ноль", "нолем", "ноле"};
     private static final String[][] ONE = {{"один", "одного", "одному", "один", "одним", "одном"}, {"одна", "одной", "одной", "одну", "одной", "одной"}, {"одно", "одного", "одному", "одно", "одним", "одном"}};
     private static final String[][] TWO = {{"два", "двух", "двум", "два", "двумя", "двух"}, {"две", "двух", "двум", "две", "двумя", "двух"}, {"два", "двух", "двум", "два", "двумя", "двух"}};
     private static final String[] ROOT_NUMBER = {"тр", "четыр", "пят", "шест", "сем", "вос", "девят", "десят", "одиннадцат", "двенадцат", "тринадцат",
             "четырнадцат", "пятнадцат", "шестнадцат", "семнадцат", "восемнадцат", "девятнадцат", "двадцат", "тридцат", "сорок", "девяност", "ст"};
-
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Введите число от -999 999 999 999 до 999 999 999 999 : ");
-        Long num = sc.nextLong();
-
-        System.out.print("Введите род числа на кириллице: М, Ж или С : ");
-        String sGender = sc.next();
-
-        System.out.print("Введите падеж числа на кириллице: И, Р, Д, В, Т или П : ");
-        String sCase = sc.next();
-
-        System.out.println(sumProp(num, sGender, sCase));
-    }
 
     public static String sumProp(long nSum, String sGender, String sCase) {
 
